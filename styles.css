@@ -1,0 +1,179 @@
+:root {
+  color-scheme: light;
+  --paper: #faf9f6;
+  --ink: #292d2b;
+  --muted: #626863;
+  --accent: #365b4b;
+  --rule: #d9ddd6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 2rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.page {
+  width: min(100% - 3rem, 46rem);
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -5rem;
+  left: 1rem;
+  z-index: 1;
+  padding: 0.5rem 1rem;
+  background: var(--paper);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.site-header {
+  padding-block: 2rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+  font-size: 0.875rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+.introduction {
+  padding-block: 3.75rem 2.75rem;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.byline {
+  color: var(--muted);
+  text-wrap: balance;
+}
+
+.content-section {
+  padding-block: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.site-footer {
+  color: var(--muted);
+}
+
+.site-footer {
+  padding-block: 1.25rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 480px) {
+  .page {
+    width: calc(100% - 2.5rem);
+  }
+
+  .site-header {
+    padding-top: 1.5rem;
+  }
+
+  nav {
+    gap: 0.5rem 1.25rem;
+  }
+
+  .introduction {
+    padding-block: 2.75rem 2rem;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+  }
+
+  .page {
+    width: 100%;
+  }
+
+  .site-header,
+  .skip-link,
+  .site-footer {
+    display: none;
+  }
+
+  .introduction,
+  .content-section {
+    padding-block: 1rem;
+  }
+
+}
